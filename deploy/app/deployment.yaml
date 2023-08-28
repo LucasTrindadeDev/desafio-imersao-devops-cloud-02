@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: rotten-potatoes
-          image: lucastrindadedev/rotten-potatoes:v4
+          image: lucastrindadedev/rotten-potatoes:latest
           ports:
             - containerPort: 5000
           env:
@@ -25,9 +25,9 @@ spec:
             - name: MONGODB_PORT
               value: "27017"
             - name: MONGODB_USERNAME
-              value: mongouser
+              value: root
             - name: MONGODB_PASSWORD
-              value: mongopwd
+              value: rootpass
 ---
 apiVersion: v1
 kind: Service
@@ -41,4 +41,3 @@ spec:
       targetPort: 5000
       nodePort: 30000
   type: NodePort
-  # type: LoadBalancer
